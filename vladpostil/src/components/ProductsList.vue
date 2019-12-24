@@ -1,0 +1,60 @@
+<template>
+  <div class="products">
+    <v-divider class="products__divider my-5"></v-divider>
+      <div class="d-flex justify-center align-center flex-column products__header v-card__title products__title">
+        <p class="font-weight-light display-1">Лучшее постельное зимы 2019</p>
+        <p class="font-weight-light display-2">Бязь ГОЛД</p>
+      </div>
+    <v-divider class="products__divider my-3"></v-divider>
+    <div class="products__table">
+      <product-card v-for="i in 17" :key="i" :number="i"/>
+    </div>
+    <div class="my-3 products__load d-flex justify-center align-center">
+      <v-btn
+        color="deep-purple accent-4"
+        large
+        outlined
+      >
+        Загрузить еще
+      </v-btn>
+    </div>
+  </div>
+</template>
+
+<script>
+import ProductCard from './ProductCard.vue';
+
+export default {
+  components: {
+    ProductCard,
+  }  
+}
+</script>
+
+<style lang="scss" scoped>
+.products {
+
+  &__table {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+  }
+
+  &__divider {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    padding: 0;
+    p {
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+}
+</style>
