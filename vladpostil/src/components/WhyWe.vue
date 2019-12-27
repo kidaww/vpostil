@@ -1,6 +1,8 @@
 <template>
   <div class="why-we">
-    <p class="font-weight-light display-2 text-center mt-12 mb-0">Почему именно мы?</p>
+    <v-divider class="my-divider"></v-divider>
+
+    <p class="font-weight-light display-2 text-center mt-12">Почему именно мы?</p>
     <p class="font-weight-bold display-2 text-center mb-6">Выгодно / Качественно / Доступно</p>
     <div class="d-flex justify-space-around mb-12 why-we__content">
       <v-card max-width="250px">
@@ -24,6 +26,8 @@
         <v-card-text class="text-center">Каждую партию ткани мы тщательно провереям на бла бла бла бла бла бла бла</v-card-text>
       </v-card>
     </div>
+
+    <v-divider class="my-divider"></v-divider>
   </div>
 </template>
 

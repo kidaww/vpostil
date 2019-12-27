@@ -7,5 +7,17 @@ body {
 }
 
 .w-100 {
-  width: 100%;
+  width: 100% !important;
+}
+.w-50 {
+  width: 50% !important;
+}
+.w-45 {
+  width: 45% !important;
+}
+
+.my-divider {
+  margin: 0 auto !important;
+  max-width: 1000px !important;
+  width: 100% !important;
 }

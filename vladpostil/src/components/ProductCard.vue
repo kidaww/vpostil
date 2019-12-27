@@ -11,7 +11,6 @@
       ></v-img>
 
       <v-row class="p-card__image-row my-0" v-if="number % 3 === 0">
-
         <v-chip
           v-if="number % 3 === 0"
           class="ma-2"
@@ -34,51 +33,30 @@
         </v-chip>
       </v-row>
 
-      <v-card-title class="pb-0">ЛАУРА №03</v-card-title>
-
-      <v-card-text>
-        <v-row
-          align="center"
-          class="mx-0"
-        >
-          <!--
-          <v-rating
-            :value="0"
-            color="amber"
-            dense
-            half-increments
-            readonly
-            size="14"
-          ></v-rating>
-
-          <div class="grey--text ml-4">0 (0)</div>
-          -->
-          <div class="ml-1" :style="{ color: (number % 2 == 0) ? '#F57C00' : '#689F38' }">{{ number % 2 == 0 ? 'Нет в наличии' : 'Есть в наличии' }}</div>
-        </v-row>
-
-        <v-divider></v-divider>
-
-        <div class="mt-4 subtitle-1 black--text">
-          <v-chip class="mr-2">
-            <v-icon left>mdi-cash</v-icon>
-            от 300 грн
-          </v-chip>
-          <v-chip class="mr-2">
-            <v-icon size="16" left>mdi-hand-left</v-icon>
-            Бязь GOLD
-          </v-chip>
+      <v-card-title class="pb-0 justify-space-between">
+        <div>
+          <p class="text-uppercase font-weight-regular mb-0 p-card__title p-card__title--main">Лаура 03</p>
+          <p class="text-uppercase font-weight-light mb-0 pl-1 p-card__title p-card__title--additional">Бязь голд</p>
         </div>
+        <div class="d-flex">
+          <p class="font-weight-light mb-0 p-card__price-sub">от</p>
+          <p class="text-uppercase font-weight-thin mb-0 mx-1 p-card__price">300</p>
+          <p class="font-weight-light mb-0 p-card__price-sub">грн</p>
+        </div>
+      </v-card-title>
 
-      </v-card-text>
-
+      <div class="d-flex justify-end ml-1 pr-4 font-weight-light" :style="{ color: (number % 2 == 0) ? '#F57C00' : '#689F38' }">{{ number % 2 == 0 ? 'Нет в наличии' : 'Есть в наличии' }}</div>
+      
       <v-divider class="mx-4"></v-divider>
 
-      <v-card-actions class="p-card__buttons">
+      <v-card-actions class="p-card__buttons w-100 justify-space-around">
         <v-btn
           color="deep-purple accent-4"
-          text
+          class="w-45"
+          outlined
+          
         >
-          Купить
+          <v-icon size="16" class="mr-2">mdi-cart</v-icon>Купить
         </v-btn>
         <product-modal-vue/>
       </v-card-actions>
@@ -87,7 +65,7 @@
 </template>
 
 <script>
-import ProductModalVue from './ProductModal.vue'
+import ProductModalVue from './ProductModal.vue';
 export default {
   props: {
     number: Number,
@@ -102,6 +80,21 @@ export default {
 .p-card {
   position: relative;
 
+  &__title {
+    line-height: 1;
+    &--main {
+      font-size: 27px;
+    }
+    &--additional {
+      font-size: 16px;
+    }
+  }
+  &__price {
+    font-size: 38px;
+  }
+  &__price-sub {
+    line-height: 2;
+  }
   &__image-row {
     position: absolute;
     top: 0;
@@ -110,7 +103,7 @@ export default {
     justify-content: flex-end;
   }
   &__buttons {
-    width: 70%;
+    //width: 70%;
   }
 }
 </style>

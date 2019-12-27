@@ -12,10 +12,33 @@
 */
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
-// const Factory = use('Factory')
+const Factory = use('Factory')
 
-// Factory.blueprint('App/Models/User', (faker) => {
-//   return {
-//     username: faker.username()
-//   }
-// })
+/**
+ * @param {Linen}
+ */
+Factory.blueprint('App/Models/Linen', async (faker) => {
+  return {
+    name: faker.username(),
+    price: faker.integer({ min: 100, max: 999 }),
+    available: faker.bool(),
+    have_discount: faker.bool(),
+    discount: faker.integer({ min: 10, max: 25 }),
+  }
+})
+
+Factory.blueprint('App/Models/Order', async (faker) => {
+  return {
+    name: faker.username(),
+    lastname: faker.username(),
+    email: faker.email(),
+    phone: faker.phone(),
+  }
+})
+
+Factory.blueprint('App/Models/LinenOrder', async (faker, i, data) => {
+  return {
+    linen_id: faker.integer({ min: 1, max: 17 }),
+    order_id: data.order_id,
+  }
+})

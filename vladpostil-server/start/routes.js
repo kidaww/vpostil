@@ -17,3 +17,13 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+
+// Public
+Route.get('linens', 'LinenController.index');
+Route.post('order', 'OrderController.makeOrder');
+
+// Admin
+Route.group(() => {
+  Route.resource('admin/linens', 'LinenController')
+  Route.resource('admin/orders', 'OrderController')
+}).namespace('Admin')
