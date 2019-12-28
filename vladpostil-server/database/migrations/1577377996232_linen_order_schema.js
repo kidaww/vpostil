@@ -10,8 +10,8 @@ class LinenOrderSchema extends Schema {
       table.integer('order_id').unsigned()
 
       // TODO: onDelete
-      table.foreign('linen_id').references('id').inTable('linens');
-      table.foreign('order_id').references('id').inTable('orders');
+      table.foreign('linen_id').references('id').inTable('linens').onDelete("cascade");
+      table.foreign('order_id').references('id').inTable('orders').onDelete("cascade");
     })
   }
 

@@ -10,6 +10,9 @@ class Linen extends Model {
   tags() {
     return this.belongsToMany('App/Models/Tag');
   }
+  sizes() {
+    return this.hasMany('App/Models/Size');
+  }
 }
 
 module.exports = Linen

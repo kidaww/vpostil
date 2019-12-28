@@ -51,28 +51,33 @@
 
       <v-card-actions class="p-card__buttons w-100 justify-space-around">
         <v-btn
-          color="deep-purple accent-4"
-          class="w-45"
-          outlined
-          
+          color="primary"
+          class="w-100 px-2"
+          rounded
+          @click="$emit('showInfo')"
         >
-          <v-icon size="16" class="mr-2">mdi-cart</v-icon>Купить
+          <v-icon size="16" class="mr-2">mdi-cart</v-icon>Подробнее
         </v-btn>
-        <product-modal-vue/>
+        <!--
+        <v-btn
+          class="w-45"
+          color="deep-purple accent-4"
+          text
+          @click="$emit('showInfo')"
+        >
+          Подробнее
+        </v-btn>
+        -->
       </v-card-actions>
     </v-card>
   </div>
 </template>
 
 <script>
-import ProductModalVue from './ProductModal.vue';
 export default {
   props: {
     number: Number,
   },
-  components: {
-    ProductModalVue,
-  }
 }
 </script>
 

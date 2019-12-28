@@ -18,6 +18,7 @@
 
       <v-btn
         text
+        @click="$emit('cart')"
       >
         Корзина
         <v-icon right dark>mdi-cart</v-icon>

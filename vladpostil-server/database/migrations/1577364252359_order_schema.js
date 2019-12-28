@@ -14,6 +14,9 @@ class OrderSchema extends Schema {
       table.string('phone', 80);
       table.string('comment', 1000);
 
+      table.integer('size_type').unsigned();
+      table.integer('count').unsigned();
+
       table.timestamps()
     })
   }

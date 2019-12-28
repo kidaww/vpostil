@@ -11,6 +11,11 @@ class LinenOrder extends Model {
   static get table () {
     return 'linen_order'
   }
+
+  static boot () {
+    super.boot()
+    this.addTrait('NoTimestamp')
+  }
 }
 
 module.exports = LinenOrder

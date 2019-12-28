@@ -1,6 +1,9 @@
 <template>
   <div class="home" id="home">
-    <navigation-vue/>
+    <cart-modal :active="cartActive" @close="cartActive = false"/>
+    <floating-cart @click.native="cartActive = true"/>
+
+    <navigation-vue @cart="cartActive = true"/>
     <header-vue/>
     <!-- <header-sticky-vue/> -->
     <!-- <top-vue/> -->
@@ -16,6 +19,8 @@
 
 <script>
 // import Scrollbar from 'smooth-scrollbar';
+import FloatingCart from '../components/CartFloat.vue';
+import CartModal from '../components/CartModal.vue';
 
 import HeaderVue from '../components/Header.vue'
 import NavigationVue from '../components/Navigation.vue';
@@ -41,7 +46,12 @@ export default {
     WhyWe,
     Delivery,
     Contacts,
+    FloatingCart,
+    CartModal,
   },
+  data: () => ({
+    cartActive: false,
+  }),
   mounted() {
     // Scrollbar.init(document.querySelector('#home'), {});
   }

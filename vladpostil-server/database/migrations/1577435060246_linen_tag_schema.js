@@ -9,9 +9,8 @@ class LinenTagSchema extends Schema {
       table.integer('linen_id').unsigned();
       table.integer('tag_id').unsigned();
 
-      // TODO: onDelete
-      table.foreign('linen_id').references('id').inTable('linens');
-      table.foreign('tag_id').references('id').inTable('tags');
+      table.foreign('linen_id').references('id').inTable('linens').onDelete("cascade");
+      table.foreign('tag_id').references('id').inTable('tags').onDelete("cascade");
     })
   }
 

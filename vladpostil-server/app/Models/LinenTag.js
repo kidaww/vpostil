@@ -11,6 +11,11 @@ class LinenTag extends Model {
   static get table () {
     return 'linen_tag'
   }
+
+  static boot () {
+    super.boot()
+    this.addTrait('NoTimestamp')
+  }
 }
 
 module.exports = LinenTag

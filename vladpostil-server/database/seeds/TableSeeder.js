@@ -10,18 +10,16 @@
 |
 */
 
-import LinenSeeder from './LinenSeeder';
-import OrderSeeder from './OrderSeeder';
-import LinenOrderSeeder from './LinenOrderSeeder';
+const LinenSeeder = require('./LinenSeeder');
+const LinenOrderSeeder = require('./LinenOrderSeeder');
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Factory = use('Factory')
 
 class TableSeeder {
   async run () {
-    LinenSeeder(Factory);
-    OrderSeeder(Factory);
-    LinenOrderSeeder(Factory);
+    await LinenSeeder(Factory);
+    await LinenOrderSeeder(Factory);
   }
 }
 

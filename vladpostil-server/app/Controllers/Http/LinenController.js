@@ -24,6 +24,7 @@ class LinenController {
     return await Linen
       .query()
       .with('tags')
+      .with('sizes')
       .orderBy('available')
       .paginate(page, 10);
   }

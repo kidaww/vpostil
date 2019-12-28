@@ -11,6 +11,8 @@ class TagSchema extends Schema {
       table.string('name');
       table.string('color');
       table.string('icon');
+
+      table.timestamps();
     })
   }
 

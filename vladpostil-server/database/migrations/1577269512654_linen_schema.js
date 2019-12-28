@@ -9,7 +9,6 @@ class LinenSchema extends Schema {
       table.increments();
 
       table.string('name', 80).notNullable();
-      table.integer('price', 20).notNullable();
       table.boolean('available');
       table.boolean('have_discount');
       table.string('image', 120);

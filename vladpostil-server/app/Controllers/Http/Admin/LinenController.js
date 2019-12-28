@@ -46,7 +46,8 @@ class LinenController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
-    const linen = Linen.create(request.only(['name', 'price']));
+    // TODO получать и создавать разеры с ценами в Size
+    const linen = Linen.create(request.only(['name']));
     linen.available = true;
     return await linen.save();
   }
@@ -85,7 +86,9 @@ class LinenController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
-    return await Linen.find(params.id).update(request.only['name', 'price']);
+    return await Linen
+      .find(params.id)
+      .update(request.only['name', 'price']);
   }
 
   /**
