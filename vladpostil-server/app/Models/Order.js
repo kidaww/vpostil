@@ -4,8 +4,12 @@
 const Model = use('Model')
 
 class Order extends Model {
+  
   linens() {
     return this.belongsToMany('App/Models/Linen')
+  }
+  linen_order() {
+    return this.hasMany('App/Models/LinenOrder');
   }
 }
 

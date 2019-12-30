@@ -16,6 +16,10 @@ class LinenOrder extends Model {
     super.boot()
     this.addTrait('NoTimestamp')
   }
+
+  sizes() {
+    return this.hasMany('App/Models/Size');
+  }
 }
 
 module.exports = LinenOrder

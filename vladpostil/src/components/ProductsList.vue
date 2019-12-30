@@ -68,5 +68,16 @@ export default {
   }
   // flex-wrap: wrap;
   // justify-content: space-between;
+
+  @media screen and (max-width: 1210px) {
+    .products__table {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .products__table {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 }
 </style>

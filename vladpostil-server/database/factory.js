@@ -30,11 +30,8 @@ Factory.blueprint('App/Models/Linen', async (faker, i) => {
 Factory.blueprint('App/Models/Order', async (faker) => {
   return {
     name: faker.username(),
-    lastname: faker.username(),
     email: faker.email(),
     phone: faker.phone(),
-    size_type: faker.integer({ min: 1, max: 4 }),
-    count: faker.integer({ min: 1, max: 10 })
   }
 })
 

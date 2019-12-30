@@ -1,6 +1,7 @@
 'use strict'
 
 const Order = use('App/Models/Order');
+const Size = use('App/Models/Size');
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
@@ -20,10 +21,13 @@ class OrderController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
-    return await Order
+    const orders = await Order
       .query()
       .with('linens')
+      .with('linen_order')
       .fetch()
+
+    return orders
   }
 
   /**

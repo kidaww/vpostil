@@ -21,6 +21,7 @@ class LinenController {
    */
   async index ({ request, response, view }) {
     const page = request.get().page || 1;
+    
     return await Linen
       .query()
       .with('tags')

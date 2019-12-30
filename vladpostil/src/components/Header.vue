@@ -6,8 +6,6 @@
         <p class="header__subtitle">Лучшее качество</p>
         <p class="header__undertitle">Цены от производителя</p>
       </div>
-      <div class="content__section content__sail">
-      </div>
     </div>
 
     <div class="header__snow" id="snow"></div>
@@ -212,7 +210,7 @@ export default {
 .content {
   display: flex;
   &__section {
-    width: 50%;
+    // width: 50%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
